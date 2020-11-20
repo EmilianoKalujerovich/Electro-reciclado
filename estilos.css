@@ -1,0 +1,595 @@
+:root {
+    --color1: black;
+    --color2: rgb(95, 95, 93);
+    --color3: rgb(253, 252, 251);
+    --fondo: rgb(24, 23, 23);
+    --titulos: 33px;
+    --margenes: 60px;
+    --espacios: 10px;
+    --espacios-contenido: 45px;
+    --colortextos: #f5ce8e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: var(--fondo);
+}
+
+img {
+    vertical-align: top;
+}
+
+
+/*Preloader*/
+
+.hidden {
+    overflow: hidden;
+}
+
+.centrado {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #fdd;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes lds-ellipsis3 {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes lds-ellipsis2 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(24px, 0);
+    }
+}
+
+
+/*Header*/
+
+header {
+    width: 100%;
+    height: 600px;
+    background: linear-gradient(to bottom, hsla(0, 0%, 8%, 0.582), hsla(35, 36%, 44%, 0.63), hsla(0, 0%, 2%, 0.192)), url(img/png/Background.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+nav {
+    width: 100%;
+    position: fixed;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .5)
+}
+
+.nav1 {
+    background: transparent;
+    height: 80px;
+    color: white;
+}
+
+.nav2 {
+    background: #eeeee3;
+    height: 100px;
+    color: black;
+    z-index: 999999;
+}
+
+.contenedor-nav {
+    display: flex;
+    margin: auto;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    height: inherit;
+    overflow: hidden;
+}
+
+nav .enlaces a {
+    display: inline-block;
+    padding: 5px 0;
+    margin-right: 17px;
+    font-size: 17px;
+    font-weight: 300;
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    color: inherit;
+}
+
+nav .enlaces a:hover {
+    border-bottom: 1px solid #f37704;
+    transition: 0.6s;
+}
+
+.logo,
+.logo img {
+    height: 80px;
+}
+
+.iconos {
+    display: none;
+    font-size: 24px;
+    padding: 23.5px 20px;
+}
+
+.textos {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: #eeeee3;
+    overflow: hidden;
+    text-align: center;
+    font-family: 'Sarpanch', sans-serif;
+}
+
+.textos>h1 {
+    font-size: 80px;
+}
+
+.textos>h2 {
+    font-size: 30px;
+    font-weight: 300;
+    font-family: 'Exo', sans-serif;
+    letter-spacing: 2px;
+    color: #f5ce8e;
+}
+
+
+/*Main*/
+
+.contenedor {
+    margin: auto;
+    padding: var(--margenes) 0;
+    width: 90%;
+    max-width: 1000px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.contenedor h3 {
+    font-size: 25px;
+    letter-spacing: 1px;
+    color: #f5ce8e;
+    font-family: 'Sarpanch', sans-serif;
+}
+
+.contenedor p {
+    font-size: var(--subtitulos);
+    font-weight: 300;
+    color: #eeeee3;
+    padding-top: 20px;
+    padding-bottom: 25px;
+    letter-spacing: 2px;
+}
+
+.after::after {
+    content: "";
+    display: block;
+    margin: auto;
+    margin-top: var(--espacios);
+    width: 100px;
+    height: 2px;
+    background: #cc734a;
+    margin-bottom: var(--espacios-contenido);
+}
+
+.name {
+    font-family: 'Sarpanch', sans-serif;
+    font-size: 25px;
+}
+
+.card {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.content-card {
+    width: 31%;
+    box-shadow: 0 0 6px 0 #eeeee3;
+    overflow: hidden;
+    height: 400px;
+}
+
+.people {
+    height: 80%;
+}
+
+.content-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.texto-team {
+    height: 20%;
+    width: 100%;
+    padding: var(--espacios) 0;
+    color: #f5ce8e;
+}
+
+.about {
+    background: linear-gradient(to bottom, rgb(24, 23, 23), rgb(161, 115, 41), rgb(24, 23, 23));
+    height: auto;
+}
+
+.servicios {
+    display: flex;
+    color: #eeeee3;
+    justify-content: space-between;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.caja-servicios>h4 {
+    margin-bottom: var(--espacios);
+    color: #eeeee3;
+    margin-top: 20px;
+    font-family: 'Exo', sans-serif;
+    letter-spacing: 2px;
+}
+
+.caja-servicios>p {
+    text-emphasis: center;
+    color: rgba(211, 135, 20, .6);
+}
+
+.botones-work {
+    overflow: hidden;
+}
+
+.botones-work li {
+    display: inline-block;
+    text-align: center;
+    margin-left: var(--espacios);
+    margin-bottom: var(--espacios-contenido);
+    padding: 6px 12px;
+    border: 1px solid var(--color2);
+    list-style: none;
+    color: #f5ce8e;
+}
+
+.botones-work li:hover {
+    background: var(--color1);
+    color: #f5ce8e;
+    cursor: pointer;
+}
+
+.botones-work .active {
+    background: var(--color1);
+    color: #eeeee3;
+}
+
+.galeria-work {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    color: #eeeee3;
+}
+
+.galeria-work .cont-work {
+    width: 31%;
+    box-shadow: 0 0 6px 0 #f5ce8e;
+    height: 300px;
+    overflow: hidden;
+    margin-bottom: var(--espacios-contenido);
+}
+
+.img-bartok {
+    height: 90%;
+    width: 100%;
+}
+
+.img-bartok img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.textos-work {
+    height: 10%;
+}
+
+.textos-work h4 {
+    line-height: 30px;
+    font-weight: 300;
+}
+
+
+/*Footer*/
+
+.footer {
+    background: url(img/png/003-birthday-cake.png);
+}
+
+.marca-logo {
+    width: 40%;
+    margin: auto;
+    margin-bottom: var(--espacios);
+}
+
+.marca-logo img {
+    width: 100%;
+}
+
+.iconosFooter {
+    margin: auto;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.redes {
+    font-size: 60px;
+    margin-bottom: var(--espacios);
+    display: inline-block;
+    padding: 10px;
+}
+
+footer>p {
+    margin-top: var(--espacios);
+    color: #f5ce8e;
+    font-family: 'Sarpanch', sans-serif;
+    text-align: right;
+    margin-right: 10px;
+}
+
+
+/*FORM*/
+
+.suscribite {
+    height: 650px;
+    background: rgb(24, 23, 23);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.suscribite h1 {
+    text-align: center;
+    font-weight: 700;
+    color: #f5ce8e;
+    font-family: 'Sarpanch', sans-serif;
+}
+
+.suscribite h3 {
+    text-align: center;
+    font-weight: 400;
+    color: #f5ce8e;
+    padding-top: 5px;
+    font-family: 'Sarpanch', sans-serif;
+}
+
+form {
+    background: rgb(24, 23, 23);
+    padding: 40px 0;
+    box-shadow: 0 0 6px 0 #f5ce8e;
+    border-radius: 10px;
+}
+
+.form {
+    width: 100%;
+    margin: auto;
+}
+
+form .grupo {
+    position: relative;
+    margin: 45px;
+}
+
+input {
+    background: none;
+    color: #f5ce8e;
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #f5ce8e;
+}
+
+input:focus {
+    outline: none;
+    color: #5e5d5d;
+}
+
+label {
+    font-family: 'Sarpanch', sans-serif;
+    color: #cc734a;
+    font-size: 16px;
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    transition: 0.5s ease all;
+    pointer-events: none;
+}
+
+input:focus~label,
+input:valid~label {
+    top: -14px;
+    font-size: 12px;
+    color: #f3b24a;
+}
+
+.barra {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.barra::before {
+    content: "";
+    height: 2px;
+    width: 0%;
+    bottom: 0;
+    position: absolute;
+    background: #BA8B02;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #181818, #BA8B02);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #181818, #BA8B02);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    transition: 0.3s ease width;
+    left: 0;
+}
+
+input:focus~.barra::before {
+    width: 100%;
+}
+
+button {
+    font-family: 'Sarpanch', sans-serif;
+    background: #BA8B02;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #181818ab, #f5ce8e);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #181818ad, #f5ce8e);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border: none;
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    color: black;
+    height: 40px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid #f5ce8e;
+}
+
+
+/*SUSCRIPCION*/
+
+@media screen and (max-width: 700px) {
+    .nav2 {
+        color: black;
+    }
+    .iconos {
+        display: block;
+        cursor: pointer;
+    }
+    .enlaces {
+        position: fixed;
+        top: 80px;
+        background: #eeeee3;
+        color: black;
+        left: 0;
+        height: 100%;
+        transition: 1s;
+        width: 0;
+        overflow: hidden;
+    }
+    .enlaces a {
+        display: block;
+        width: 100%;
+        height: 50px;
+        padding: 20px;
+        text-align: center;
+        background: #eeeee3;
+        color: black;
+    }
+    .textos>h1 {
+        font-size: 70px;
+    }
+    .textos>h2 {
+        font-size: 35px;
+    }
+    .content-card {
+        width: 48%;
+        margin-bottom: var(--margenes);
+    }
+     :root {
+        --margenes: 30px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+     :root {
+        --espacios-contenido: 25px;
+    }
+    .content-card {
+        width: 90%;
+    }
+    .caja-servicios {
+        width: 90%;
+        margin-bottom: var(--margenes);
+    }
+    .cont-work {
+        width: 85%;
+    }
+    .marca-logo {
+        width: 80%;
+    }
+    /* .iconos {
+        margin: auto;
+    } */
+    form {
+        width: 80%;
+    }
+}
